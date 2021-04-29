@@ -1,4 +1,3 @@
-import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
 
 import java.util.Properties;
 
@@ -16,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        final String username = "CIS234A@gmail.com";
+        final String username = "cis234a@gmail.com";
         final String password = "CIS234A_mail";
 
         Properties props = new Properties();
@@ -40,7 +39,7 @@ public class Main {
             message.setRecipients(Message.RecipientType.TO,
                     InternetAddress.parse("marc.goodman@pcc.edu"));
             message.setSubject("Testing Subject");
-            message.setDataHandler(new DataHandler("<p>This is a <b>bold</b> test of formatted messages.</p>", "text/html"));
+            message.setContent("<p>This is a <b>bold</b> test of formatted messages.</p>", "text/html");
 
             Transport.send(message);
 
